@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Hartwell | Editorial Partner for Academic Book Manuscripts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #2B3B35;
+            --bg-darker: #232E2A;
+            --gold: #C9A227;
+            --gold-light: #D4B24A;
+            --cream: #F5F3EF;
+            --white: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+
+        /* Header */
+        header {
+            padding: 2.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-align: left;
+        }
+
+        .logo h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .logo p {
+            font-size: 0.95rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .contact-btn {
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .service-card {
+            text-align: left;
+        }
+
+        .service-icon {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon svg {
+            width: 45px;
+            height: 45px;
+            fill: var(--gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .about-content {
+            max-width: 1000px;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            .logo h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>RIO HARTWELL</h1>
+            <p>Editorial partner for academic book manuscripts</p>
+        </div>
+        <a href="#contact" class="contact-btn">Contact Me</a>
+    </header>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 2l.117.007a1 1 0 0 1 .876.876L7 3v1h10V3l.007-.117a1 1 0 0 1 .876-.876L18 2h1a3 3 0 0 1 2.995 2.824L22 5v14a3 3 0 0 1-2.824 2.995L19 22H5a3 3 0 0 1-2.995-2.824L2 19V5a3 3 0 0 1 2.824-2.995L5 2h1zm12 4H6v14h12V6zM10 16v2H8v-2h2zm0-4v2H8v-2h2zm0-4v2H8V8h2zm6 8v2h-4v-2h4zm0-4v2h-4v-2h4zm0-4v2h-4V8h4z"/>
+                    </svg>
+                </div>
+                <h3>Manuscript Editing</h3>
+                <p>Meticulous editorial review to strengthen structure, argument, and voice. Includes an editorial letter, annotated manuscript, and a clear revision plan. Whether you need developmental feedback on structure, careful line editing for clarity, or ESL support for non-native speakers, I help your ideas reach the readers they deserve.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <h3>Indexing & Proof</h3>
+                <p>Reader-focused indexes for scholarly and trade nonfiction, plus line/copyedits and press-ready proofing to deliver a clean, professional book. I create indexes that serve as genuine research tools—helping readers find not just terms, but ideas and arguments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <h2>About</h2>
+        <div class="about-content">
+            <p>I'm Rio Hartwell, a freelance editor specializing in academic book manuscripts for scholars in the humanities and social sciences.</p>
+
+            <p>I work with authors at every stage of the publishing process—from shaping a book proposal to delivering a press-ready manuscript. My clients include faculty and researchers whose work has appeared with Oxford University Press, Cambridge University Press, University of Chicago Press, Columbia University Press, University of Massachusetts Press, and other leading academic imprints.</p>
+
+            <p>What sets my approach apart is continuity: rather than handing your manuscript off to different specialists at each phase, you work with one editor who understands your argument, your voice, and your goals from start to finish.</p>
+
+            <p>My background combines graduate training—I did my doctoral work at Arizona State University—with professional certification in Editing and Publishing from the University of Chicago. I've worked on manuscripts spanning Latin American politics, urban studies, criminology, social movements, and American literature.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Ready to discuss your manuscript? I'd love to hear about your project.</p>
+        <p>Email me at <a href="mailto:riohartwell@gmail.com">riohartwell@gmail.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rio Hartwell. All rights reserved.</p>
+    </footer>
+</body>
+</html>
