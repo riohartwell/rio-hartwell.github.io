@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rio Hartwell | Editorial Partner for Academic Book Manuscripts</title>
+    <meta name="description" content="Professional editing and indexing for academic book manuscripts in the humanities and social sciences. From developmental editing to press-ready proofs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,18 +12,24 @@
         :root {
             --bg-dark: #2B3B35;
             --bg-darker: #232E2A;
+            --bg-darkest: #1C2521;
             --gold: #C9A227;
             --gold-light: #D4B24A;
+            --gold-muted: rgba(201, 162, 39, 0.15);
             --cream: #F5F3EF;
             --white: #FFFFFF;
             --text-light: rgba(255, 255, 255, 0.9);
-            --text-muted: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.6);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -38,14 +45,38 @@
             font-weight: 400;
         }
 
-        /* Header */
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sticky Header */
         header {
-            padding: 2.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-darker);
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-inner {
             max-width: 1400px;
             margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -53,29 +84,47 @@
         }
 
         .logo h1 {
-            font-size: 2.8rem;
+            font-size: 1.8rem;
             font-weight: 400;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             color: var(--white);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.1rem;
         }
 
         .logo p {
-            font-size: 0.95rem;
-            letter-spacing: 0.25em;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-muted);
             font-weight: 300;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
         .contact-btn {
             background: var(--gold);
             color: var(--bg-dark);
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             border: none;
             border-radius: 50px;
             font-family: 'Lato', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
             text-decoration: none;
@@ -87,37 +136,100 @@
             transform: translateY(-2px);
         }
 
-        /* Services Section */
-        .services {
-            padding: 4rem 5%;
+        /* Hero Section */
+        .hero {
+            padding: 5rem 5% 4rem;
             max-width: 1400px;
             margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .hero h2 span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: var(--bg-darker);
+        }
+
+        .services-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .service-card {
-            text-align: left;
+            background: var(--bg-dark);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
         .service-icon {
-            color: var(--gold);
-            font-size: 2.5rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gold-muted);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.5rem;
         }
 
         .service-icon svg {
-            width: 45px;
-            height: 45px;
+            width: 26px;
+            height: 26px;
             fill: var(--gold);
         }
 
         .service-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--white);
             margin-bottom: 1rem;
             font-weight: 500;
@@ -125,14 +237,18 @@
 
         .service-card p {
             color: var(--text-light);
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.8;
         }
 
         /* About Section */
         .about {
-            padding: 4rem 5%;
-            max-width: 1400px;
+            padding: 5rem 5%;
+            background: var(--bg-dark);
+        }
+
+        .about-inner {
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -140,12 +256,7 @@
             font-size: 2.5rem;
             color: var(--gold);
             margin-bottom: 2rem;
-            font-weight: 500;
             font-style: italic;
-        }
-
-        .about-content {
-            max-width: 1000px;
         }
 
         .about-content p {
@@ -156,31 +267,110 @@
 
         /* Contact Section */
         .contact {
-            padding: 4rem 5%;
-            max-width: 1400px;
+            padding: 5rem 5%;
+            background: var(--bg-darker);
+        }
+
+        .contact-inner {
+            max-width: 600px;
             margin: 0 auto;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
         .contact h2 {
             font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            margin-bottom: 1rem;
             font-style: italic;
         }
 
-        .contact p {
+        .contact > .contact-inner > p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
             font-size: 1.1rem;
-            margin-bottom: 2rem;
         }
 
-        .contact a {
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-form label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 1.1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form button:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .contact-alt {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-alt p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-alt a {
             color: var(--gold);
             text-decoration: none;
         }
 
-        .contact a:hover {
+        .contact-alt a:hover {
             text-decoration: underline;
         }
 
@@ -189,92 +379,174 @@
             padding: 2rem 5%;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            background: var(--bg-darkest);
         }
 
         /* Responsive */
         @media (max-width: 900px) {
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
             }
 
-            header {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            nav a:not(.contact-btn) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
                 flex-direction: column;
-                text-align: center;
-                gap: 2rem;
+                gap: 1rem;
             }
 
             .logo {
                 text-align: center;
             }
 
-            .logo h1 {
+            .hero h2 {
                 font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Sticky Header -->
     <header>
-        <div class="logo">
-            <h1>RIO HARTWELL</h1>
-            <p>Editorial partner for academic book manuscripts</p>
+        <div class="header-inner">
+            <div class="logo">
+                <h1>RIO HARTWELL</h1>
+                <p>Editorial partner for academic manuscripts</p>
+            </div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="contact-btn">Contact Me</a>
+            </nav>
         </div>
-        <a href="#contact" class="contact-btn">Contact Me</a>
     </header>
 
-    <!-- Services -->
-    <section class="services">
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 2l.117.007a1 1 0 0 1 .876.876L7 3v1h10V3l.007-.117a1 1 0 0 1 .876-.876L18 2h1a3 3 0 0 1 2.995 2.824L22 5v14a3 3 0 0 1-2.824 2.995L19 22H5a3 3 0 0 1-2.995-2.824L2 19V5a3 3 0 0 1 2.824-2.995L5 2h1zm12 4H6v14h12V6zM10 16v2H8v-2h2zm0-4v2H8v-2h2zm0-4v2H8V8h2zm6 8v2h-4v-2h4zm0-4v2h-4v-2h4zm0-4v2h-4V8h4z"/>
-                    </svg>
-                </div>
-                <h3>Manuscript Editing</h3>
-                <p>Meticulous editorial review to strengthen structure, argument, and voice. Includes an editorial letter, annotated manuscript, and a clear revision plan. Whether you need developmental feedback on structure, careful line editing for clarity, or ESL support for non-native speakers, I help your ideas reach the readers they deserve.</p>
-            </div>
+    <!-- Hero -->
+    <section class="hero fade-in">
+        <h2>Your manuscript deserves <span>meticulous care.</span></h2>
+        <p>From developmental editing to press-ready proofs, I help humanities and social science scholars turn strong ideas into polished books.</p>
+    </section>
 
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                    </svg>
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="section-header fade-in">
+                <h2>Services</h2>
+                <p>Comprehensive editorial support for academic authors</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                        </svg>
+                    </div>
+                    <h3>Manuscript Editing</h3>
+                    <p>Meticulous editorial review to strengthen structure, argument, and voice. Includes an editorial letter, annotated manuscript, and a clear revision plan. Whether you need developmental feedback, careful line editing, or ESL support, I help your ideas reach the readers they deserve.</p>
                 </div>
-                <h3>Indexing & Proof</h3>
-                <p>Reader-focused indexes for scholarly and trade nonfiction, plus line/copyedits and press-ready proofing to deliver a clean, professional book. I create indexes that serve as genuine research tools—helping readers find not just terms, but ideas and arguments.</p>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Indexing & Proof</h3>
+                    <p>Reader-focused indexes for scholarly and trade nonfiction, plus line/copyedits and press-ready proofing. I create indexes that serve as genuine research tools—helping readers find not just terms, but ideas and arguments throughout your book.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About -->
-    <section class="about">
-        <h2>About</h2>
-        <div class="about-content">
-            <p>I'm Rio Hartwell, a freelance editor specializing in academic book manuscripts for scholars in the humanities and social sciences.</p>
+    <section class="about" id="about">
+        <div class="about-inner fade-in">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>I'm Rio Hartwell, a freelance editor specializing in academic book manuscripts for scholars in the humanities and social sciences.</p>
 
-            <p>I work with authors at every stage of the publishing process—from shaping a book proposal to delivering a press-ready manuscript. My clients include faculty and researchers whose work has appeared with Oxford University Press, Cambridge University Press, University of Chicago Press, Columbia University Press, University of Massachusetts Press, and other leading academic imprints.</p>
+                <p>I work with authors at every stage of the publishing process—from shaping a book proposal to delivering a press-ready manuscript. My clients include faculty and researchers whose work has appeared with Oxford University Press, Cambridge University Press, University of Chicago Press, Columbia University Press, University of Massachusetts Press, and other leading academic imprints.</p>
 
-            <p>What sets my approach apart is continuity: rather than handing your manuscript off to different specialists at each phase, you work with one editor who understands your argument, your voice, and your goals from start to finish.</p>
+                <p>What sets my approach apart is continuity: rather than handing your manuscript off to different specialists at each phase, you work with one editor who understands your argument, your voice, and your goals from start to finish.</p>
 
-            <p>My background combines graduate training—I did my doctoral work at Arizona State University—with professional certification in Editing and Publishing from the University of Chicago. I've worked on manuscripts spanning Latin American politics, urban studies, criminology, social movements, and American literature.</p>
+                <p>My background combines graduate training—I did my doctoral work at Arizona State University—with professional certification in Editing and Publishing from the University of Chicago. I've worked on manuscripts spanning Latin American politics, urban studies, criminology, social movements, and American literature.</p>
+            </div>
         </div>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
-        <h2>Get in Touch</h2>
-        <p>Ready to discuss your manuscript? I'd love to hear about your project.</p>
-        <p>Email me at <a href="mailto:riohartwell@gmail.com">riohartwell@gmail.com</a></p>
+        <div class="contact-inner">
+            <h2>Get in Touch</h2>
+            <p>Ready to discuss your manuscript? Tell me about your project.</p>
+
+            <form class="contact-form fade-in" action="https://formspree.io/f/mvzqeeel" method="POST">
+                <div class="form-row">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="project">Project Type</label>
+                    <select id="project" name="project">
+                        <option value="">Select one...</option>
+                        <option value="developmental">Developmental Editing</option>
+                        <option value="line">Line Editing / Copyediting</option>
+                        <option value="indexing">Indexing</option>
+                        <option value="proofing">Proofreading</option>
+                        <option value="other">Other / Not Sure</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Tell me about your project</label>
+                    <textarea id="message" name="message" placeholder="Brief description, timeline, word count if known..."></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="contact-alt">
+                <p>Prefer email? Reach me at <a href="mailto:riohartwell@gmail.com">riohartwell@gmail.com</a></p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Rio Hartwell. All rights reserved.</p>
+        <p>&copy; 2026 Rio Hartwell Editorial. All rights reserved.</p>
     </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
