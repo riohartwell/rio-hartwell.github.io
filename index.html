@@ -63,11 +63,11 @@
             top: 0;
             z-index: 100;
             background: var(--bg-darker);
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
         }
 
         .header-inner {
@@ -84,11 +84,11 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 0.12em;
             color: var(--white);
-            margin-bottom: 0.1rem;
+            margin-bottom: 0;
         }
 
         .logo p {
@@ -138,18 +138,18 @@
 
         /* Hero Section */
         .hero {
-            padding: 5rem 5% 4rem;
-            max-width: 1400px;
+            padding: 3.5rem 5% 2.5rem;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
         .hero h2 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             color: var(--white);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             font-weight: 400;
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
         .hero h2 span {
@@ -158,136 +158,118 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 2rem;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         /* Services Section */
         .services {
-            padding: 5rem 5%;
+            padding: 3rem 5% 3.5rem;
             background: var(--bg-darker);
         }
 
         .services-inner {
-            max-width: 1400px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2rem;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--gold);
             font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+            margin-bottom: 0;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 1.5rem;
         }
 
         .service-card {
             background: var(--bg-dark);
-            padding: 2.5rem;
-            border-radius: 8px;
+            padding: 1.75rem;
+            border-radius: 6px;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: border-color 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gold-muted);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-icon svg {
-            width: 26px;
-            height: 26px;
-            fill: var(--gold);
+            border-color: rgba(201, 162, 39, 0.25);
         }
 
         .service-card h3 {
-            font-size: 1.6rem;
-            color: var(--white);
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 0.6rem;
             font-weight: 500;
         }
 
         .service-card p {
             color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 0.92rem;
+            line-height: 1.7;
         }
 
         /* About Section */
         .about {
-            padding: 5rem 5%;
+            padding: 3rem 5% 3.5rem;
             background: var(--bg-dark);
         }
 
         .about-inner {
-            max-width: 1000px;
+            max-width: 680px;
             margin: 0 auto;
         }
 
         .about h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--gold);
-            margin-bottom: 2rem;
+            margin-bottom: 1.25rem;
             font-style: italic;
         }
 
         .about-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.9;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 5%;
+            padding: 3rem 5% 3.5rem;
             background: var(--bg-darker);
         }
 
         .contact-inner {
-            max-width: 600px;
+            max-width: 520px;
             margin: 0 auto;
             text-align: center;
         }
 
         .contact h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-style: italic;
         }
 
         .contact > .contact-inner > p {
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
         }
 
         .contact-form {
@@ -314,13 +296,13 @@
         .contact-form select,
         .contact-form textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 0.8rem;
             background: var(--bg-dark);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 6px;
+            border-radius: 4px;
             color: var(--white);
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: border-color 0.3s;
         }
 
@@ -332,21 +314,21 @@
         }
 
         .contact-form textarea {
-            min-height: 140px;
+            min-height: 110px;
             resize: vertical;
         }
 
         .contact-form button {
             background: var(--gold);
             color: var(--bg-dark);
-            padding: 1.1rem 2rem;
+            padding: 0.9rem 2rem;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s, transform 0.2s;
-            margin-top: 0.5rem;
+            margin-top: 0.25rem;
         }
 
         .contact-form button:hover {
@@ -355,14 +337,14 @@
         }
 
         .contact-alt {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
         .contact-alt p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
         .contact-alt a {
@@ -376,10 +358,10 @@
 
         /* Footer */
         footer {
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             background: var(--bg-darkest);
         }
 
@@ -409,7 +391,7 @@
             }
 
             .hero h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -420,7 +402,6 @@
         <div class="header-inner">
             <div class="logo">
                 <h1>RIO HARTWELL</h1>
-                <p>Editorial partner for academic manuscripts</p>
             </div>
             <nav>
                 <a href="#services">Services</a>
@@ -432,8 +413,8 @@
 
     <!-- Hero -->
     <section class="hero fade-in">
-        <h2>Your manuscript deserves <span>meticulous care.</span></h2>
-        <p>From developmental editing to press-ready proofs, I help humanities and social science scholars turn strong ideas into polished books.</p>
+        <h2>Editorial partnership, from first draft to <span>final proofs.</span></h2>
+        <p>I give humanities and social science scholars the kind of sustained, substantive editorial support that makes the difference between a good manuscript and a great book.</p>
     </section>
 
     <!-- Services -->
@@ -441,27 +422,26 @@
         <div class="services-inner">
             <div class="section-header fade-in">
                 <h2>Services</h2>
-                <p>Comprehensive editorial support for academic authors</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-                        </svg>
-                    </div>
                     <h3>Manuscript Editing</h3>
-                    <p>Meticulous editorial review to strengthen structure, argument, and voice. Includes an editorial letter, annotated manuscript, and a clear revision plan. Whether you need developmental feedback, careful line editing, or ESL support, I help your ideas reach the readers they deserve.</p>
+                    <p>Substantive editorial review to strengthen structure, argument, and voice. Includes an editorial letter, annotated manuscript, and a clear revision plan. Whether you need developmental feedback on structure and argument, line editing for clarity and voice, or ESL editing for fluency and precision, I help your ideas reach the readers they deserve.</p>
                 </div>
 
                 <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z"/>
-                        </svg>
-                    </div>
-                    <h3>Indexing & Proof</h3>
-                    <p>Reader-focused indexes for scholarly and trade nonfiction, plus line/copyedits and press-ready proofing. I create indexes that serve as genuine research tools—helping readers find not just terms, but ideas and arguments throughout your book.</p>
+                    <h3>Book Proposal Development</h3>
+                    <p>A strong proposal opens doors. I help scholars develop compelling book proposals that articulate the significance of their work, position it within the field, and speak directly to acquisition editors. From the initial concept through sample chapters and cover letters, I help you make the strongest possible case for your project.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <h3>Indexing & Proofreading</h3>
+                    <p>Reader-focused indexes for scholarly and trade nonfiction, plus line/copyedits and press-ready proofing. I create indexes that serve as genuine research tools — helping readers find not just terms, but ideas and arguments throughout your book.</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <h3>Full-Cycle Support</h3>
+                    <p>Most editors handle a single stage. I work with scholars across the full arc of a book — from proposal development through developmental editing, press-ready copyedits, and indexing. This continuity means a deeper understanding of your project at every phase and one trusted editorial partner from start to finish.</p>
                 </div>
             </div>
         </div>
@@ -472,13 +452,15 @@
         <div class="about-inner fade-in">
             <h2>About</h2>
             <div class="about-content">
-                <p>I'm Rio Hartwell, a freelance editor specializing in academic book manuscripts for scholars in the humanities and social sciences.</p>
+                <p>I'm Rio Hartwell. I help humanities and social science scholars turn ambitious research into polished, press-ready books.</p>
 
-                <p>I work with authors at every stage of the publishing process—from shaping a book proposal to delivering a press-ready manuscript. My clients include faculty and researchers whose work has appeared with Oxford University Press, Cambridge University Press, University of Chicago Press, Columbia University Press, University of Massachusetts Press, and other leading academic imprints.</p>
+                <p>I work with authors at every stage of the publishing process — from shaping a book proposal to delivering a final manuscript. My clients include faculty and researchers whose work has appeared with Oxford University Press, University of Chicago Press, Cambridge University Press, and other leading academic imprints.</p>
 
                 <p>What sets my approach apart is continuity: rather than handing your manuscript off to different specialists at each phase, you work with one editor who understands your argument, your voice, and your goals from start to finish.</p>
 
-                <p>My background combines graduate training—I did my doctoral work at Arizona State University—with professional certification in Editing and Publishing from the University of Chicago. I've worked on manuscripts spanning Latin American politics, urban studies, criminology, social movements, and American literature.</p>
+                <p>My background combines doctoral training at Arizona State University with professional certification in Editing and Publishing from the University of Chicago. I've worked on manuscripts spanning Latin American politics, urban studies, criminology, social movements, and American literature. I bring that range to every project.</p>
+
+                <p>If you're looking for an editorial partner who will invest in your work as deeply as you have, I'd love to hear about your project.</p>
             </div>
         </div>
     </section>
